@@ -1,0 +1,570 @@
+/* added some google fonts by importing url */
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+:root {
+  --font1: "Mulish", sans-serif;
+  --font2: "Poppins", sans-serif;
+
+  /* --bg_music_bar: #2b2b2a;
+  --font_color_1: white;
+  --font_color_2: lightgrey;
+  --font_color_3: #1db954; */
+}
+/* by this the font will change color when we hover */
+p:hover {
+  color: greenyellow;
+  cursor: pointer;
+}
+/* all fontawesome classes will change color when hover */
+i:hover {
+  color: greenyellow;
+}
+/* webkit is for some browser in which we didi not our derired output */
+::-webkit-scrollbar {
+  height: 7px;
+  width: 0px;
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393812;
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+
+/* here i add margin, padding as zero, font color will remain white for all until unless i chhange in particular class or id,  font size will remain 15px for all */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 15px;
+  background-color: rgb(22, 2, 41);
+  overflow-x: hidden;
+}
+/* i use grid for this music player.. so grid-container is a class in which all my webpage content will be arranged */
+.grid-container {
+  display: grid;
+  height: 100vh;
+  /* this is the template area or in other words it is a layout of music player */
+  grid-template-areas:
+    "header header  header"
+    "content content  queue"
+    "mediaplayer mediaplayer mediaplayer";
+}
+/* this is a header  */
+.grid-header {
+  grid-area: header;
+  height: 100px;
+
+  /* border-bottom: 1px solid violet; */
+}
+/* this space is for content area which will cover 69 of view port width */
+.grid-content {
+  grid-area: content;
+  width: 69vw;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  /* border: 1px solid lightslategray; */
+}
+/* this space is for queue setion in which list of queue song will be display */
+.grid-queue {
+  grid-area: queue;
+  /* display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  justify-content: flex-start; */
+  width: 29vw;
+  /* border: 1px solid lightslategray; */
+}
+/*  this is a footer section in which media player will be display */
+.grid-media-player {
+  grid-area: mediaplayer;
+  background-color: lightslategray;
+  height: 100px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  position: fixed;
+}
+/* all heading in the music player will of size of 1.3 rem */
+h2 {
+  font-size: 1.3rem;
+}
+/* header or navbar...  */
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 6rem;
+  align-items: center;
+}
+/* logo of the music player */
+.logo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* logo image dimensions, padding and margin */
+.logo img {
+  height: 6rem;
+  margin-left: 1rem;
+}
+/* headmenu is a menu for music player which involves only 1 heading i.e. Favourites */
+#headmenu {
+  margin-left: 1rem;
+}
+/* search boc is a container for search bar */
+.searchbox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* this is a form in which search content will be typed */
+.searchform input {
+  width: 20vw;
+  height: 2rem;
+  border-radius: 25px;
+  padding: 0 2rem;
+  border: 1px solid black;
+  background-color: rgb(38, 2, 72);
+}
+/* this is focus function to change the property when the search box is clicked */
+.searchform input:focus {
+  outline: none;
+}
+/* adjustment of microphone icon to be on searchbar */
+.microphone {
+  margin-right: -1.5rem;
+  z-index: 1;
+  background-color: rgb(22, 2, 41);
+}
+/* adjustment of search icon to be on searchbar */
+.search {
+  margin-left: -2rem;
+  z-index: 1;
+  background-color: rgb(22, 2, 41);
+}
+/* adjustment of dimension of profile picture */
+.profilepic img {
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 4rem;
+}
+.title {
+  font-family: var(--font1);
+  margin: 1rem;
+  padding: 0 5px 5px 5px;
+}
+/* here header section ends...  */
+/* this is the conatiner for the content of single playlist page */
+.contents {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+/* playlist container includes image , name, and about section of the artist */
+
+.playlist-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+/* adjustment of dimension of the artist image */
+.playlist-container > img {
+  min-height: 20rem;
+  min-width: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
+  margin: 20px;
+  border-radius: 10px;
+}
+/* this flex will arranged image , title and about */
+.playlist-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: auto;
+  align-content: center;
+}
+/* this will adjust the title of the artist */
+#playlist-title {
+  color: greenyellow;
+  font-family: var(--font1);
+  font-size: 30px;
+  margin: 20px;
+  margin-top: 30px;
+}
+/* this will adjust the category of the artist */
+#playlist-genres {
+  color: slategray;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  font-family: var(--font1);
+}
+/* it will handle the about section of the singer */
+#about-singer {
+  color: whitesmoke;
+  font-family: var(--font1);
+  margin: 5px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+}
+/* this will manage the position of play and follow button */
+.playlist-btn {
+  display: flex;
+  align-items: center;
+}
+/* style and manage position of play btn */
+#playlist-playbtn {
+  margin: 20px;
+  /* margin-left: 20px; */
+  padding: 10px 25px;
+  border: 1px solid blueviolet;
+  background: rgb(10, 0, 36);
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 0, 36, 1) 8%,
+    rgba(132, 126, 181, 1) 35%,
+    rgba(43, 41, 138, 1) 82%,
+    rgba(9, 9, 121, 1) 100%,
+    rgba(255, 0, 130, 1) 100%
+  );
+}
+/* this will add style to follow button */
+#follow-btn {
+  font-family: var(--font1);
+  margin: 20px;
+  padding: 10px 25px;
+}
+/* this is for the list of songs of the artist */
+.playlist-songs {
+  display: flex;
+  flex-direction: column;
+}
+.playlistcontent {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: 5rem;
+  margin-bottom: 5px;
+  background-color: rgb(30, 4, 55);
+  border-radius: 5px;
+}
+/* this will adjust the dimension of the image of playlist content */
+.playlistcontent img {
+  height: 4rem;
+  padding: 5px 0 5px 0px;
+  background-color: rgb(30, 4, 55);
+  border-radius: 10px;
+}
+/* to give margin to heart class in the playlist list */
+.playlistheart {
+  margin-right: 40px;
+}
+/* to give the index of the playlist */
+#playlist-number {
+  color: slategrey;
+  font-size: 0.8rem;
+  margin: 10px;
+  margin-right: 5px;
+  background-color: rgb(30, 4, 55);
+}
+/* to style the song name */
+#playlist-song-name {
+  padding-top: 5px;
+  padding-left: 15px;
+  background-color: rgb(30, 4, 55);
+}
+/* to style the album name */
+#playlist-album-name {
+  padding-left: 15px;
+  padding-top: 5px;
+  font-size: 0.7rem;
+  color: lightslategray;
+  background-color: rgb(30, 4, 55);
+}
+.playlist-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 5rem;
+  margin-left: 20px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 69vw;
+  /* min-width: 20rem; */
+  background-color: rgb(30, 4, 55);
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#song-name {
+  margin: 0.8rem 1rem;
+}
+#song-album {
+  margin-left: 1rem;
+  color: lightslategray;
+}
+/* Playlist and artist  about section ends here */
+/* starting of aside section which contains similar artist */
+/* container for similar artist */
+.queuecontent {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: 5rem;
+  margin-bottom: 5px;
+  background-color: rgb(30, 4, 55);
+  border-radius: 5px;
+}
+/* adjustment and styling of images of similar artist */
+.queuecontent img {
+  height: 7rem;
+  padding: 5px 0 5px 0px;
+  background-color: rgb(30, 4, 55);
+  border-radius: 50%;
+}
+/* index for similar artist */
+#queue-number {
+  color: slategrey;
+  font-size: 0.8rem;
+  margin: 10px;
+  margin-right: 5px;
+  background-color: rgb(30, 4, 55);
+}
+/* styling for artist name */
+#queue-artist-name {
+  padding-top: 5px;
+  padding-left: 15px;
+  background-color: rgb(30, 4, 55);
+}
+/* styling for album name */
+#queue-album-name {
+  padding-left: 15px;
+  padding-top: 5px;
+  font-size: 0.7rem;
+  color: lightslategray;
+  background-color: rgb(30, 4, 55);
+}
+/* Display property for similar artist section */
+.queue-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5rem;
+  margin-bottom: 5px;
+  background-color: rgb(30, 4, 55);
+}
+
+/* footer (audio player controls)*/
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 5;
+  padding-top: 1.5em;
+  padding-bottom: 0.2rem;
+  height: 74px;
+  /* margin-left: -50px; */
+}
+
+#footer-song-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+}
+
+#footer-song-info > div {
+  margin: 1vh;
+}
+
+#footer-song-image {
+  height: 4rem;
+  width: 4rem;
+  margin: 1vh;
+  background: url("images/latest/4.jpg") center no-repeat;
+  background-size: contain;
+}
+
+#footer-song-name {
+  height: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.subtitle {
+  color: #c0c0c0;
+  font-size: 0.9rem;
+  margin: 0.1rem;
+}
+
+/*Player Controls*/
+
+/* Pause, Next, Shuffle &other Icons and Slider Styling*/
+
+#player {
+  width: 40%;
+  min-width: 200px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#player > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#player-control {
+  width: 50%;
+}
+
+#player-slider-container {
+  width: 100%;
+}
+
+input[type="range"] {
+  width: 80%;
+}
+
+/*Player Extras*/
+
+.player-extras {
+  display: flex;
+  width: 20%;
+  min-width: 115px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.volume-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#volume-slider {
+  width: 80%;
+}
+/* media player ends here */
+
+/* Responsiveness starts here */
+@media only screen and (max-width: 936px) {
+  /* changing layout when px dec to 936 or less */
+  .grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+      "header header"
+      "content content"
+      "queue queue"
+      "mediaplayer mediaplayer";
+  }
+  /* changing width from 69vw to 100 vw */
+  .grid-header {
+    width: 100vw;
+  }
+  /* changing width from 69vw to 100 vw */
+  .grid-content {
+    width: 100vw;
+    height: inherit;
+  }
+  /* changing width from 69vw to 100 vw */
+  .playlist-elements {
+    width: 100vw;
+    margin-right: -25px;
+  }
+  /* /* changing dimension of image as they are large for small screen */
+  .playlist-container > img {
+    min-height: 10rem;
+    min-width: 10rem;
+    max-width: 10rem;
+    max-height: 10rem;
+    margin: 0;
+    margin-top: 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+  #playlist-title {
+    color: greenyellow;
+    font-family: var(--font1);
+    font-size: 16px;
+    margin: 0px;
+    margin-top: 22px;
+  }
+  #playlist-genres {
+    color: slategray;
+    margin-bottom: 3px;
+    margin-left: 1px;
+    font-family: var(--font1);
+    font-size: 10px;
+  }
+  #about-singer {
+    color: whitesmoke;
+    font-family: var(--font1);
+    margin: 5px;
+    margin-bottom: 6px;
+    margin-left: 0px;
+    font-size: 11px;
+  }
+  #playlist-playbtn {
+    font-size: 10px;
+    padding: 5px 2px;
+  }
+  #follow-btn {
+    font-size: 10px;
+    padding: 5px 2px;
+  }
+  .grid-queue {
+    grid-area: queue;
+    width: 100vw;
+    overflow: initial;
+    flex-flow: column;
+    display: flex;
+  }
+  .header > .logo > img {
+    height: 3rem;
+  }
+  .profilepic img {
+    height: 2rem;
+    margin-right: 1rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  #headmenu {
+    font-size: 10px;
+    margin-left: 3px;
+  }
+  .end-content {
+    margin-bottom: 1rem;
+  }
+  .queuecontent img {
+    max-height: 3rem;
+  }
+}

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kapil Studio</title>
+    <!-- link to add favicon  -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png" />
+    <!-- link to add style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- script to add font awesome to add creative icons -->
+    <script
+      src="https://kit.fontawesome.com/1aa1ed5563.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- grid-container will include all the content of the mjusicplayer -->
+    <div class="grid-container">
+      <!-- header for header of the musicplayer -->
+      <div class="grid-header">
+        <nav class="header">
+          <!--logo of the kapil studio  -->
+          <div class="logo">
+            <!-- adding image of the music player -->
+            <img src="assets/images/logo.png" alt="" />
+            <!-- menu for music player -->
+            <p id="headmenu">Favourites</p>
+          </div>
+          <!-- searchbox container  -->
+          <div class="searchbox">
+            <!-- class for microphone -->
+            <i class="fa-solid fa-microphone microphone"></i>
+            <!-- form to take input of the search -->
+            <form class="searchform">
+              <input type="text" placeholder="Search..." />
+            </form>
+            <!-- class for magnifying class -->
+            <i class="fa-solid fa-magnifying-glass search"></i>
+          </div>
+          <!-- class for bellicon -->
+          <i class="fa-solid fa-bell bellicon"></i>
+          <!-- class for profilepic -->
+          <div class="profilepic">
+            <!-- to add image  -->
+            <img src="assets/images/profile.jpg" alt="" />
+          </div>
+        </nav>
+      </div>
+      <!-- header sevtion ends & main content area starts from here -->
+      <div class="grid-content">
+        <div class="contents">
+          <!-- adding title -->
+          <h2 class="title">Featuring</h2>
+          <!-- carousel start from here -->
+          <div class="carousel-wrapper">
+            <span id="item-1"></span>
+            <span id="item-2"></span>
+            <span id="item-3"></span>
+            <div class="carousel-item item-1">
+              <a href="#item-3" class="arrow-prev arrow"></a>
+              <a href="#item-2" class="arrow-next arrow"></a>
+            </div>
+
+            <div class="carousel-item item-2">
+              <a href="#item-1" class="arrow-prev arrow"></a>
+              <a href="#item-3" class="arrow-next arrow"></a>
+            </div>
+
+            <div class="carousel-item item-3">
+              <a href="#item-2" class="arrow-prev arrow"></a>
+              <a href="#item-1" class="arrow-next arrow"></a>
+            </div>
+          </div>
+          <!-- carousel ends here -->
+          <!-- 2nd title starts from here -->
+          <h2 class="title">Latest Release</h2>
+          <!-- latest song container  -->
+          <div class="lat-container">
+            <!-- songs images , song name ,album name -->
+            <div class="lat-content">
+              <img src="assets/images/latest/1.jpg" alt="" />
+              <div class="lat-info">
+                <div class="info">
+                  <p id="song-name">Majha Ma</p>
+                  <p id="song-album">Amazon Music</p>
+                </div>
+              </div>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="lat-content">
+              <img src="assets/images/latest/2.jpg" alt="" />
+              <div class="lat-info">
+                <div class="info">
+                  <p id="song-name">Kyu Na Battan</p>
+                  <p id="song-album">Anjali</p>
+                </div>
+              </div>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="lat-content">
+              <img src="assets/images/latest/3.jpg" alt="" />
+              <div class="lat-info">
+                <div class="info">
+                  <p id="song-name">Funk Da Bounces</p>
+                  <p id="song-album">Rockstar</p>
+                </div>
+              </div>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="lat-content">
+              <img src="assets/images/latest/4.jpg" alt="" />
+              <div class="lat-info">
+                <div class="info">
+                  <p id="song-name">Shiva Theme</p>
+                  <p id="song-album">Arijit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- latest release ends here -->
+          <!-- trending starts from here -->
+          <h2 class="title">Trending</h2>
+          <!-- container for trending -->
+          <div class="inner-content">
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/trending/1.webp" alt="" />
+              <p class="song-info">Dil Ne</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/2.webp" alt="" />
+              <p class="song-info">Jugni</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/3.webp" alt="" />
+              <p class="song-info">HRVY</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/4.webp" alt="" />
+              <p class="song-info">Oh Sanam</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/5.webp" alt="" />
+              <p class="song-info">Do Vaari</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/6.webp" alt="" />
+              <p class="song-info">Tera Suit</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/1.webp" alt="" />
+              <p class="song-info">Dil Ne</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/2.webp" alt="" />
+              <p class="song-info">Jugni</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/3.webp" alt="" />
+              <p class="song-info">HRVY</p>
+            </div>
+            <!-- songs images , song name ,album name -->
+            <div class="con">
+              <img src="assets/images/trending/4.webp" alt="" />
+              <p class="song-info">Oh Sanam</p>
+            </div>
+          </div>
+          <!-- trending ends here -->
+          <!-- genres starts from here -->
+          <h2 class="title">Genres</h2>
+          <!-- container for genres -->
+          <div class="inner-content">
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/1.png" alt="" />
+              <p class="song-info">Party</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/2.jpg" alt="" />
+              <p class="song-info">Dance</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/3.png" alt="" />
+              <p class="song-info">Romance</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/4.jpg" alt="" />
+              <p class="song-info">Emotional</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/5.jpg" alt="" />
+              <p class="song-info">Lofi</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/6.jpg" alt="" />
+              <p class="song-info">Workout</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/1.png" alt="" />
+              <p class="song-info">Party</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/2.jpg" alt="" />
+              <p class="song-info">Dance</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/3.png" alt="" />
+              <p class="song-info">Romance</p>
+            </div>
+            <!-- songs images , song name -->
+            <div class="con">
+              <img src="assets/images/genres/4.jpg" alt="" />
+              <p class="song-info">Emotional</p>
+            </div>
+          </div>
+          <!-- genres section end here -->
+          <!-- artist section start from here -->
+          <h2 class="title">Artist</h2>
+          <!-- container for artist section -->
+          <div class="inner-content">
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/1.webp" alt="" />
+              <!-- <p class="song-info">Pritam</p> -->
+              <a href="index2.html">Pritam</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/2.webp" alt="" />
+              <!-- <p class="song-info">Arijit</p> -->
+              <a href="index2.html">Arijit</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/3.webp" alt="" />
+              <!-- <p class="song-info">Badshah</p> -->
+              <a href="index2.html">Badshah</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/4.webp" alt="" />
+              <!-- <p class="song-info">B Praak</p> -->
+              <a href="index2.html">B Praak</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/5.webp" alt="" />
+              <!-- <p class="song-info">Tony Kakkar</p> -->
+              <a href="index2.html">Tony Kakkar</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/6.webp" alt="" />
+              <!-- <p class="song-info">Neha Kakkar</p> -->
+              <a href="index2.html">Neha Kakkar</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/1.webp" alt="" />
+              <!-- <p class="song-info">Pritam</p> -->
+              <a href="index2.html">Pritam</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/2.webp" alt="" />
+              <!-- <p class="song-info">Arijit</p> -->
+              <a href="index2.html">Arjit</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/3.webp" alt="" />
+              <!-- <p class="song-info">Badshah</p> -->
+              <a href="index2.html">Badshah</a>
+            </div>
+            <!-- artist images , artist name -->
+            <div class="con-art">
+              <img src="assets/images/artist/4.webp" alt="" />
+              <!-- <p class="song-info">B Praak</p> -->
+              <a href="index2.html">B Praak</a>
+            </div>
+          </div>
+          <!-- artist section end here -->
+          <!-- playlist section start here -->
+          <h2 class="title">Top Playlist</h2>
+          <!-- container for playlist section -->
+          <div class="inner-content">
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/90ssongsad.webp" alt="" />
+              <p class="song-info">90's Sad</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/bighitseng.webp" alt="" />
+              <p class="song-info">English</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img
+                src="assets/images/top-playlist/bighitspunjabi.webp"
+                alt=""
+              />
+              <p class="song-info">Punjabi</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/heartbreak.webp" alt="" />
+              <p class="song-info">HeartBreak</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/lovestoriyan.webp" alt="" />
+              <p class="song-info">Love Storiyan</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/partyhot.webp" alt="" />
+              <p class="song-info">Hot Party</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/90ssongsad.webp" alt="" />
+              <p class="song-info">90's Sad</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/bighitseng.webp" alt="" />
+              <p class="song-info">English</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img
+                src="assets/images/top-playlist/bighitspunjabi.webp"
+                alt=""
+              />
+              <p class="song-info">Punjabi</p>
+            </div>
+            <!-- playlist image & playlist title -->
+            <div class="con">
+              <img src="assets/images/top-playlist/heartbreak.webp" alt="" />
+              <p class="song-info">HeartBreak</p>
+            </div>
+          </div>
+          <!-- playlist section end here -->
+          <!-- kapil's recomends start from here -->
+          <h2 class="title">Kapil's Recomends</h2>
+          <!-- container for kapil's recomend start from here -->
+          <!-- end content is for extra margin -->
+          <div class="inner-content end-content">
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/1.webp" alt="" />
+              <p class="song-info">Taur Jatt Di</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/2.webp" alt="" />
+              <p class="song-info">Dua Qubool</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/3.webp" alt="" />
+              <p class="song-info">HRVY</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/4.webp" alt="" />
+              <p class="song-info">Oh Sanam</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/5.webp" alt="" />
+              <p class="song-info">Do Vaari</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/6.webp" alt="" />
+              <p class="song-info">Tera Suit</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/1.webp" alt="" />
+              <p class="song-info">Taur Jatt Di</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/2.webp" alt="" />
+              <p class="song-info">Dua Qubool</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/3.webp" alt="" />
+              <p class="song-info">HRVY</p>
+            </div>
+            <!-- song image & song name -->
+            <div class="con">
+              <img src="assets/images/ks-recommends/4.webp" alt="" />
+              <p class="song-info">Oh Sanam</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content section ends here -->
+      <!-- now from here queue section starts which is in aside in desktop view -->
+      <div class="grid-queue">
+        <!-- heading for queue -->
+        <h2 class="title">Queue</h2>
+        <!-- container for queue  -->
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">01.</p>
+            <img src="assets/images/queue/1.webp" alt="" />
+            <div>
+              <p id="queue-song-name">Dil Ne</p>
+              <p id="queue-album-name">Asim Azhar</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">02.</p>
+            <img src="assets/images/queue/2.webp" alt="" />
+            <div>
+              <p id="queue-song-name">Jugni</p>
+              <p id="queue-album-name">White Hill</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">03.</p>
+            <img src="assets/images/queue/3.webp" alt="" />
+            <div>
+              <p id="queue-song-name">HRVY</p>
+              <p id="queue-album-name">A5 & A6</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">04.</p>
+            <img src="assets/images/queue/4.webp" alt="" />
+            <div>
+              <p id="queue-song-name">Oh Sanam</p>
+              <p id="queue-album-name">Tony Kakkar</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">05.</p>
+            <img src="assets/images/queue/5.webp" alt="" />
+            <div>
+              <p id="queue-song-name">Do Vaari Jaat</p>
+              <p id="queue-album-name">Sony Music</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">06.</p>
+            <img src="assets/images/queue/6.webp" alt="" />
+            <div>
+              <p id="queue-song-name">Tera Suit</p>
+              <p id="queue-album-name">Ali Brothers</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">07.</p>
+            <img src="assets/images/queue/7.webp" alt="" />
+            <div>
+              <p id="queue-song-name">Modern Ranjha</p>
+              <p id="queue-album-name">Desi Records</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">08.</p>
+            <img src="assets/images/queue/8.jpg" alt="" />
+            <div>
+              <p id="queue-song-name">Maja Ma</p>
+              <p id="queue-album-name">Prime Music</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">09.</p>
+            <img src="assets/images/queue/9.jpg" alt="" />
+            <div>
+              <p id="queue-song-name">Kya Na Baatan</p>
+              <p id="queue-album-name">Anjali</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">10.</p>
+            <img src="assets/images/queue/10.jpg" alt="" />
+            <div>
+              <p id="queue-song-name">Funk Da Bounces</p>
+              <p id="queue-album-name">Elina</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">11.</p>
+            <img src="assets/images/queue/11.jpg" alt="" />
+            <div>
+              <p id="queue-song-name">Shiva Theme</p>
+              <p id="queue-album-name">Arijit</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">12.</p>
+            <img src="assets/images/queue/12.jpg" alt="" />
+            <div>
+              <p id="queue-song-name">Hope 2.0</p>
+              <p id="queue-album-name">Brothers</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">13.</p>
+            <img src="assets/images/queue/13.jpg" alt="" />
+            <div>
+              <p id="queue-song-name">Maharani</p>
+              <p id="queue-album-name">Neha Kakkar</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+
+        <div class="queue-elements">
+          <div class="queuecontent">
+            <p id="queue-number">14.</p>
+            <img src="assets/images/queue/14.jpg" alt="" />
+            <div>
+              <p id="queue-song-name">Mil Jao</p>
+              <p id="queue-album-name">Atif Aslam</p>
+            </div>
+          </div>
+          <i class="far fa-heart queueheart"></i>
+        </div>
+      </div>
+      <!-- queue section end here -->
+      <!-- media player starts here -->
+      <div class="grid-media-player">
+        <div class="footer">
+          <div id="footer-song-info">
+            <div id="footer-song-image"></div>
+            <div id="footer-song-name">
+              <span id="ftr-sng-name" style="color: white;">Shiva Theme</span>
+              <span class="subtitle">Arijit Singh</span>
+            </div>
+            <div>
+              <span class="nav-link">
+                <i class="far fa-heart subtitle"></i>
+              </span>
+              <span class="nav-link">
+                <i class="fas fa-ban subtitle"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Contains Player Controls: Play, Pause, Next, Previous, Shuffle and Repeat with Slider -->
+          <div id="player">
+            <div id="player-control">
+              <div><i class="fas fa-random" style="color: white;"></i></div>
+              <div>
+                <i class="fas fa-step-backward" style="color: white;"></i>
+              </div>
+              <div>
+                <i
+                  class="far fa-pause-circle"
+                  style="font-size: 2rem; color: white;"
+                ></i>
+              </div>
+              <div>
+                <i class="fas fa-step-forward" style="color: white;"></i>
+              </div>
+              <div><i class="fas fa-redo" style="color: white;"></i></div>
+            </div>
+
+            <div id="player-slider-container">
+              <div class="subtitle">
+                0:00
+              </div>
+
+              <input type="range" min="0" max="100" value="25" />
+
+              <div class="subtitle">
+                4:44
+              </div>
+            </div>
+          </div>
+
+          <!-- Volume buttom, Expand button -->
+          <div class="player-extras">
+            <div>
+              <i class="fas fa-list-ul" style="color: white;"></i>
+            </div>
+            <div>
+              <i class="fas fa-laptop" style="color: white;"></i>
+            </div>
+
+            <div class="volume-container" style="color: white;">
+              <span><i class="fas fa-volume-up"></i></span>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="slider"
+                id="volume-slider"
+              />
+            </div>
+            <div><i class="fas fa-expand" style="color: white;"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

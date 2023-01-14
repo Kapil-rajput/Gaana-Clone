@@ -1,0 +1,568 @@
+/* url to import google font for better fonts */
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+/* variable declaration */
+:root {
+  --font1: "Mulish", sans-serif;
+  --font2: "Poppins", sans-serif;
+
+  /* --bg_music_bar: #2b2b2a;
+  --font_color_1: white;
+  --font_color_2: lightgrey;
+  --font_color_3: #1db954; */
+}
+/* on hovering p tag will change color */
+p:hover {
+  color: greenyellow;
+  cursor: pointer;
+}
+/* on hovering i class of fontawesome will change color */
+i:hover {
+  color: greenyellow;
+}
+/* for scrollbar for vrious browser */
+::-webkit-scrollbar {
+  height: 7px;
+  width: 0px;
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393812;
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+/* margin, padding 0 , font size universal as 15 */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 15px;
+  background-color: rgb(22, 2, 41);
+  overflow-x: hidden;
+}
+/* this container holds all the content of the webpage i.e. music player */
+.grid-container {
+  display: grid;
+  height: 100vh;
+  /* this template area decide the layout of the page */
+  grid-template-areas:
+    "header header  header"
+    "content content  queue"
+    "mediaplayer mediaplayer mediaplayer";
+}
+/* grid header includes the header of page */
+.grid-header {
+  grid-area: header;
+  height: 100px;
+
+  /* border-bottom: 1px solid violet; */
+}
+/* grid content includes the main content of the webpage */
+.grid-content {
+  grid-area: content;
+  width: 69vw;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  /* border: 1px solid lightslategray; */
+}
+/* this grid queue include the aside section of the page i.e. queue list */
+.grid-queue {
+  grid-area: queue;
+  /* display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  justify-content: flex-start; */
+  width: 29vw;
+  /* border: 1px solid lightslategray; */
+}
+/* this includes the media player section which will comes in footer section*/
+.grid-media-player {
+  grid-area: mediaplayer;
+  background-color: lightslategray;
+  height: 100px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  position: fixed;
+}
+/* all heading will be of size 1.3rem */
+h2 {
+  font-size: 1.3rem;
+}
+/* header includes the display property of flex */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 6rem;
+  align-items: center;
+}
+/* adjustment of logo here */
+.logo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* dimension of image of logo */
+.logo img {
+  height: 6rem;
+  margin-left: 1rem;
+}
+/* managing ofheader menu  */
+#headmenu {
+  margin-left: 1rem;
+}
+/* searchbox is a container of search box */
+.searchbox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* this will adjust the form or search bar at the time of input */
+.searchform input {
+  width: 20vw;
+  height: 2rem;
+  border-radius: 25px;
+  padding: 0 2rem;
+  border: 1px solid black;
+  background-color: rgb(38, 2, 72);
+}
+/* this will adjust theform when it i clicked */
+.searchform input:focus {
+  outline: none;
+}
+/* to adjust the positon of microphone */
+.microphone {
+  margin-right: -1.5rem;
+  z-index: 1;
+  background-color: rgb(22, 2, 41);
+}
+/* to adjust the position of search  */
+.search {
+  margin-left: -2rem;
+  z-index: 1;
+  background-color: rgb(22, 2, 41);
+}
+/* to adjust the dimension of profile pic */
+.profilepic img {
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 4rem;
+}
+
+.title {
+  font-family: var(--font1);
+  margin: 1rem;
+  padding: 0 5px 5px 5px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+/* for carousel */
+.carousel-wrapper {
+  height: 20rem;
+  width: 50rem;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+/* for carousel position */
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+/* for arrow on the carousel */
+.arrow {
+  border: solid greenyellow;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^="item"] {
+  display: none;
+}
+/* images for carousel */
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url("carousel/3.jpeg");
+  background-size: cover;
+}
+.item-2 {
+  background: url("carousel/2.jpeg");
+  background-size: cover;
+}
+.item-3 {
+  background: url("carousel/1.jpeg");
+  background-size: cover;
+}
+
+*:target ~ .item-1 {
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+}
+#item-2:target ~ .item-2,
+#item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+}
+/* container for the content */
+.inner-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: scroll;
+  margin-left: 3rem;
+  height: 15rem;
+  width: 69vw;
+}
+
+.con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* image dimension */
+.con img {
+  height: 10rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+/* image hover effects */
+.con img:hover {
+  transform: scale(1.1);
+  filter: contrast(1.3);
+}
+/* song info */
+.song-info {
+  font-family: var(--font1);
+}
+/* container */
+.con-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* anchor tag text decoration to none */
+.con-art > a {
+  text-decoration: none;
+  font: var(--font1);
+}
+.con-art > a:hover {
+  color: greenyellow;
+}
+/* to make the Artist image to cicular */
+.con-art img {
+  height: 10rem;
+  margin: 1rem;
+  border-radius: 50%;
+}
+/* hovering effects */
+.con-art img:hover {
+  transform: scale(1.1);
+  filter: contrast(1.3);
+}
+/* last content extra bottom margin so that the page looks preety good */
+.end-content {
+  margin-bottom: 8rem;
+}
+
+/* container for latest release */
+.lat-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
+  margin-left: 3rem;
+}
+/* this include latest content */
+.lat-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: auto;
+  width: 30rem;
+}
+/* image dimension of latest release */
+.lat-content img {
+  height: 6rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+/* latest release image hovering effect */
+.lat-content img:hover {
+  transform: scale(1.1);
+  filter: contrast(1.3);
+}
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#song-name {
+  margin: 0.8rem 1rem;
+}
+#song-album {
+  margin-left: 1rem;
+  color: lightslategray;
+}
+/* queue section start */
+.queuecontent {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: 5rem;
+  margin-bottom: 5px;
+  background-color: rgb(30, 4, 55);
+  border-radius: 5px;
+}
+/* queue content image dimension */
+.queuecontent img {
+  height: 4rem;
+  padding: 5px 0 5px 0px;
+  background-color: rgb(30, 4, 55);
+  border-radius: 10px;
+}
+/* heart postioning of queue */
+.queueheart {
+  margin-right: 40px;
+}
+/* queue number  */
+#queue-number {
+  color: slategrey;
+  font-size: 0.8rem;
+  margin: 10px;
+  margin-right: 5px;
+  background-color: rgb(30, 4, 55);
+}
+#queue-song-name {
+  padding-top: 5px;
+  padding-left: 15px;
+  background-color: rgb(30, 4, 55);
+}
+#queue-album-name {
+  padding-left: 15px;
+  padding-top: 5px;
+  font-size: 0.7rem;
+  color: lightslategray;
+  background-color: rgb(30, 4, 55);
+}
+.queue-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5rem;
+  margin-bottom: 5px;
+  background-color: rgb(30, 4, 55);
+}
+/* footer (audio player controls)*/
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 5;
+  padding-top: 1.5em;
+  padding-bottom: 0.2rem;
+  height: 74px;
+  /* margin-left: -50px; */
+}
+
+#footer-song-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+}
+
+#footer-song-info > div {
+  margin: 1vh;
+}
+
+#footer-song-image {
+  height: 4rem;
+  width: 4rem;
+  margin: 1vh;
+  background: url("images/latest/4.jpg") center no-repeat;
+  background-size: contain;
+}
+
+#footer-song-name {
+  height: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.subtitle {
+  color: #c0c0c0;
+  font-size: 0.9rem;
+  margin: 0.1rem;
+}
+
+/*Player Controls*/
+
+/* Pause, Next, Shuffle &other Icons and Slider Styling*/
+
+#player {
+  width: 40%;
+  min-width: 200px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#player > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#player-control {
+  width: 50%;
+}
+
+#player-slider-container {
+  width: 100%;
+}
+
+input[type="range"] {
+  width: 80%;
+}
+
+/*Player Extras*/
+
+.player-extras {
+  display: flex;
+  width: 20%;
+  min-width: 115px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.volume-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#volume-slider {
+  width: 80%;
+}
+/* footer ends or media player ends here */
+/* RESPONSIVENESS STARTS FROM HERE */
+
+@media only screen and (max-width: 936px) {
+  .grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+      "header header"
+      "content content"
+      "queue queue"
+      "mediaplayer mediaplayer";
+  }
+  .grid-header {
+    width: 100vw;
+  }
+  .grid-content {
+    width: 100vw;
+    height: inherit;
+  }
+
+  .lat-container {
+    width: 100vw;
+  }
+  .inner-content {
+    width: 100vw;
+    height: 11rem;
+  }
+  .grid-queue {
+    grid-area: queue;
+    width: 100vw;
+    overflow: initial;
+    flex-flow: column;
+    display: flex;
+  }
+  .header > .logo > img {
+    height: 3rem;
+  }
+  .profilepic img {
+    height: 2rem;
+    margin-right: 1rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  #headmenu {
+    font-size: 10px;
+    margin-left: 3px;
+  }
+  .lat-content img {
+    height: 4rem;
+  }
+  .con img {
+    height: 6rem;
+  }
+  .con-art img {
+    height: 6rem;
+  }
+  .end-content {
+    margin-bottom: 1rem;
+  }
+  .queuecontent img {
+    max-height: 3rem;
+  }
+  .carousel-wrapper {
+    height: 18rem;
+    width: 100vw;
+    margin: 0;
+  }
+}
